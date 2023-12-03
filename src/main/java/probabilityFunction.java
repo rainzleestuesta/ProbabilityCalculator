@@ -85,13 +85,12 @@ public class probabilityFunction extends JFrame {
     private void onStart() {cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
-    }
-    private void onReturn() {
-        cl.show(cardPanel, "Card1");
-
         ProbVizualizer probChart = new ProbVizualizer(values);
         ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
         resCenter.add(chartPanel);
+    }
+    private void onReturn() {
+        cl.show(cardPanel, "Card1");
     }
 
     public static void main(String[] args) {
