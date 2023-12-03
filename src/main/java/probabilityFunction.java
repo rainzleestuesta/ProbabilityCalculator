@@ -18,8 +18,8 @@ public class probabilityFunction extends JFrame {
     private JButton btnRandomize;
     private JButton btnGraph;
     private JTextField txtSize;
-    private JCheckBox populationCheckBox;
-    private JCheckBox sampleCheckBox;
+    private JCheckBox chkPopu;
+    private JCheckBox chkSample;
     private JTextField txtInput;
     private JTextField txtMean;
     private JTextField txtMedian;
@@ -53,6 +53,8 @@ public class probabilityFunction extends JFrame {
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
         btnCompute.addActionListener(e -> onCompute());
+        chkPopu.addActionListener(e -> onPopu());
+        chkSample.addActionListener(e -> onSample());
 
         txtMean.setEditable(false);
         txtMedian.setEditable(false);
@@ -64,7 +66,8 @@ public class probabilityFunction extends JFrame {
         resMode.setEditable(false);
         resVariance.setEditable(false);
         resStdDev.setEditable(false);
-
+        txtInterpret.setEditable(false);
+        
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
         cardPanel.add(panel2, "Card2");
@@ -114,7 +117,14 @@ public class probabilityFunction extends JFrame {
     private void onReturn() {
         cl.show(cardPanel, "Card1");
     }
-
+    private void onPopu() {
+        //add code here
+        chkSample.setSelected(false);
+    }
+    private void onSample() {
+        //add code here
+        chkPopu.setSelected(false);
+    }
     public static void main(String[] args) {
         new probabilityFunction();
     }
