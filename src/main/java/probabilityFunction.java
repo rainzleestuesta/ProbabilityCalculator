@@ -29,11 +29,11 @@ public class probabilityFunction extends JFrame {
     private JPanel resEast;
     private JPanel resCenter;
     private JTextArea txtInterpret;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JTextField resMean;
+    private JTextField resMedian;
+    private JTextField resMode;
+    private JTextField resVariance;
+    private JTextField resStdDev;
     private JButton btnReturn;
     private JButton btnCompute;
     private JButton btnStart;
@@ -56,6 +56,11 @@ public class probabilityFunction extends JFrame {
         txtMode.setEditable(false);
         txtVariance.setEditable(false);
         txtStdDev.setEditable(false);
+        resMean.setEditable(false);
+        resMedian.setEditable(false);
+        resMode.setEditable(false);
+        resVariance.setEditable(false);
+        resStdDev.setEditable(false);
 
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
