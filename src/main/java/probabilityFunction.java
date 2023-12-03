@@ -51,7 +51,7 @@ public class probabilityFunction extends JFrame {
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
         btnCompute.addActionListener(e -> onCompute());
-        chkPopu.addActionListener(e -> onPopu());
+        chkPopu.addActionListener(e -> onPopulation());
         chkSample.addActionListener(e -> onSample());
 
         txtMean.setEditable(false);
@@ -147,7 +147,7 @@ public class probabilityFunction extends JFrame {
     private void onReturn() {
         cl.show(cardPanel, "Card1");
     }
-    private void onPopu() {
+    private void onPopulation() {
         //add code here
         chkSample.setSelected(false);
     }
