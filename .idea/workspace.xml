@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="betlog">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="🗿🗿">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/probabilityFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/probabilityFunction.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +16,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "KubangPawis"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="07fdde09-c0d8-4ccd-ba4a-d9d810a9c1e4" />
+        <option name="url" value="https://github.com/rainzleestuesta/ProbabilityCalculator.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -93,7 +105,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701582328703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="🗿🗿">
+      <option name="closed" value="true" />
+      <created>1701593634859</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701593634859</updated>
+    </task>
+    <task id="LOCAL-00005" summary="🗿🗿">
+      <option name="closed" value="true" />
+      <created>1701593659411</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701593659411</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +154,17 @@
     <MESSAGE value="-added JGoodies dependency&#10;-functional form" />
     <MESSAGE value="-added a start screen" />
     <MESSAGE value="betlog" />
-    <option name="LAST_COMMIT_MESSAGE" value="betlog" />
+    <MESSAGE value="" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

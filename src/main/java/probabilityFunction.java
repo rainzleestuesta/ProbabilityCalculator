@@ -2,6 +2,7 @@ import org.jfree.chart.ChartPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -41,7 +42,7 @@ public class probabilityFunction extends JFrame {
 
     CardLayout cl = new CardLayout();
     int size;
-    double [] values = new double[size];
+    double[] values;
     String inputText;
 
     public probabilityFunction() {
@@ -101,7 +102,10 @@ public class probabilityFunction extends JFrame {
 
     private void onCompute(){
         size = Integer.parseInt(txtSize.getText());
+        values = new double[size];
         double mean, median, mode, variance, std, sum = 0;
+
+        inputReader();
 
         //MEAN
         for(int i = 0; i < size; i++){
@@ -132,8 +136,13 @@ public class probabilityFunction extends JFrame {
         String input = txtInput.getText();
         String[] parts = input.split(", ");
         for (int i = 0; i < size; i++) {
-                values[i] = Double.parseDouble(parts[i]);
+            values[i] = Double.parseDouble(parts[i]);
+            System.out.println(values[i]);
         }
+    }
+
+    private void getMean() {
+
     }
 
     private void onStart() {
