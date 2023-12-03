@@ -43,15 +43,15 @@ public class probabilityFunction extends JFrame {
     private JPanel pnlSouth;
     private JTextField txtSpacer;
     private JButton btnInterpret;
+    private JLabel lblMean;
+    private JLabel lblMedian;
+    private JLabel lblMode;
+    private JLabel lblVariance;
+    private JLabel lblStdDev;
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-    int size;
-    double[] values;
-    String inputText, samplingMethod;
     inputComputation compute = new inputComputation();
     public probabilityFunction() {
-
-
 
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
@@ -109,8 +109,8 @@ public class probabilityFunction extends JFrame {
     private void onRandomize() {
         int start = 1, end = 500;
         Random random = new Random();
-        size = Integer.parseInt(txtSize.getText());
-        double[] values = new double[size];
+        compute.setSize(Integer.parseInt(txtSize.getText()));
+        double[] values = new double[compute.getSize()];
 
         StringBuilder inputTextBuilder = new StringBuilder();
 
@@ -124,6 +124,13 @@ public class probabilityFunction extends JFrame {
     }
 
     private void onCompute(){
+
+        lblMean.setText("Mean:");
+        lblMedian.setText("Median:");
+        lblMode.setText("Mode:");
+        lblVariance.setText("Variance:");
+        lblStdDev.setText("Standard Deviation:");
+
         compute.setSize(Integer.parseInt(txtSize.getText()));
         compute.setValues(new double[compute.getSize()]);
         inputReader(); //return each input value to the values list
