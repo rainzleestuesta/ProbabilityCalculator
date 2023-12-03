@@ -85,7 +85,7 @@ public class probabilityFunction extends JFrame {
     private void onStart() {cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
-        ProbVizualizer probChart = new ProbVizualizer(values);
+        ProbVizualizer probChart = new ProbVizualizer(new double[] {1,2,2,3,3,3,4,4,5});
         ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
         resCenter.add(chartPanel);
     }
