@@ -70,10 +70,15 @@ public class probabilityFunction extends JFrame {
         txtStdDev.setEditable(false);
         txtStdDev.setBorder(emptyBorder);
         resMean.setEditable(false);
+        resMean.setBorder(emptyBorder);
         resMedian.setEditable(false);
+        resMedian.setBorder(emptyBorder);
         resMode.setEditable(false);
+        resMode.setBorder(emptyBorder);
         resVariance.setEditable(false);
+        resVariance.setBorder(emptyBorder);
         resStdDev.setEditable(false);
+        resStdDev.setBorder(emptyBorder);
         txtInterpret.setEditable(false);
         txtDistance.setBorder(emptyBorder);
         
