@@ -75,6 +75,7 @@ public class probabilityFunction extends JFrame {
         resVariance.setEditable(false);
         resStdDev.setEditable(false);
         txtInterpret.setEditable(false);
+        txtDistance.setBorder(emptyBorder);
 
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
