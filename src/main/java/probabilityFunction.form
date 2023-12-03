@@ -344,46 +344,6 @@
               <text value="  SUMMARY"/>
             </properties>
           </component>
-          <grid id="50023" binding="resEast" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints border-constraint="East"/>
-            <properties>
-              <background color="-460819"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="263a1" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <foreground color="-14342875"/>
-                  <text value="INTERPRETATION"/>
-                </properties>
-              </component>
-              <hspacer id="8a0e9">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </hspacer>
-              <scrollpane id="4acde">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="9d014" class="javax.swing.JTextArea" binding="txtInterpret">
-                    <constraints/>
-                    <properties>
-                      <background color="-11513259"/>
-                      <foreground color="-1"/>
-                    </properties>
-                  </component>
-                </children>
-              </scrollpane>
-            </children>
-          </grid>
           <grid id="12ac2" binding="resCenter" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints border-constraint="Center"/>
             <properties>
@@ -501,16 +461,34 @@
                   </hspacer>
                 </children>
               </grid>
-              <component id="7d92d" class="javax.swing.JButton" binding="btnReturn">
+              <grid id="6a22" binding="pnlSouth" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                 <constraints border-constraint="South"/>
                 <properties>
-                  <background color="-1392"/>
-                  <enabled value="true"/>
-                  <font name="Arial" style="1"/>
-                  <foreground color="-14342875"/>
-                  <text value="Return"/>
+                  <background color="-460819"/>
                 </properties>
-              </component>
+                <border type="none"/>
+                <children>
+                  <component id="deb37" class="javax.swing.JButton" binding="btnReturn">
+                    <constraints/>
+                    <properties>
+                      <text value="Return"/>
+                    </properties>
+                  </component>
+                  <component id="db1e6" class="javax.swing.JTextField" binding="txtSpacer">
+                    <constraints/>
+                    <properties>
+                      <background color="-460819"/>
+                      <columns value="5"/>
+                    </properties>
+                  </component>
+                  <component id="7cf68" class="javax.swing.JButton" binding="btnInterpret">
+                    <constraints/>
+                    <properties>
+                      <text value="Interpret Results"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
             </children>
           </grid>
         </children>
@@ -553,6 +531,47 @@
               <font size="18"/>
               <foreground color="-14342875"/>
               <text value="Peter Dantes - Rainzle Estuesta - Lance Ventura"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="75497" binding="panel3" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <card name="Card4"/>
+        </constraints>
+        <properties>
+          <background color="-460819"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="663b9" class="javax.swing.JLabel">
+            <constraints border-constraint="North"/>
+            <properties>
+              <font name="Arial Black" size="26"/>
+              <foreground color="-14342875"/>
+              <text value="  Interpretation"/>
+            </properties>
+          </component>
+          <scrollpane id="8607e">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="b3812" class="javax.swing.JTextArea" binding="txtInterpret">
+                <constraints/>
+                <properties>
+                  <background color="-460819"/>
+                  <font name="Arial" size="12"/>
+                  <foreground color="-14342875"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <component id="f369a" class="javax.swing.JButton" binding="btnClose">
+            <constraints border-constraint="South"/>
+            <properties>
+              <background color="-460819"/>
+              <text value="Close Summary"/>
             </properties>
           </component>
         </children>

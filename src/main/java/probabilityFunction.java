@@ -3,8 +3,6 @@ import org.jfree.chart.ChartPanel;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -28,7 +26,6 @@ public class probabilityFunction extends JFrame {
     private JTextField txtMode;
     private JTextField txtVariance;
     private JTextField txtStdDev;
-    private JPanel resEast;
     private JPanel resCenter;
     private JTextArea txtInterpret;
     private JTextField resMean;
@@ -41,6 +38,11 @@ public class probabilityFunction extends JFrame {
     private JButton btnStart;
     private JPanel panel0;
     private JTextField txtDistance;
+    private JPanel panel3;
+    private JButton btnClose;
+    private JPanel pnlSouth;
+    private JTextField txtSpacer;
+    private JButton btnInterpret;
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     int size;
@@ -57,6 +59,8 @@ public class probabilityFunction extends JFrame {
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
         btnCompute.addActionListener(e -> onCompute());
+        btnInterpret.addActionListener(e -> onInterpret());
+        btnClose.addActionListener(e -> onClose());
         chkPopu.addActionListener(e -> onPopulation());
         chkSample.addActionListener(e -> onSample());
 
@@ -82,10 +86,12 @@ public class probabilityFunction extends JFrame {
         resStdDev.setBorder(emptyBorder);
         txtInterpret.setEditable(false);
         txtDistance.setBorder(emptyBorder);
+        txtSpacer.setBorder(emptyBorder);
         
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
         cardPanel.add(panel2, "Card2");
+        cardPanel.add(panel3, "Card3");
         cl.show(cardPanel, "LAYOUT");
 
         //WINDOW SETTINGS
@@ -169,6 +175,12 @@ public class probabilityFunction extends JFrame {
     }
     private void onReturn() {
         cl.show(cardPanel, "Card1");
+    }
+    private void onInterpret() {
+        cl.show(cardPanel, "Card3");
+    }
+    private void onClose() {
+        cl.show(cardPanel, "Card0");
     }
     private void onPopulation() {
         compute.setSamplingMethod("Population");
