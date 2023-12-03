@@ -124,46 +124,49 @@ public class probabilityFunction extends JFrame {
     }
 
     private void onCompute(){
+        if (txtInput.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please input values first.", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }else {
+            lblMean.setText("Mean:");
+            lblMedian.setText("Median:");
+            lblMode.setText("Mode:");
+            lblVariance.setText("Variance:");
+            lblStdDev.setText("Standard Deviation:");
 
-        lblMean.setText("Mean:");
-        lblMedian.setText("Median:");
-        lblMode.setText("Mode:");
-        lblVariance.setText("Variance:");
-        lblStdDev.setText("Standard Deviation:");
+            compute.setSize(Integer.parseInt(txtSize.getText()));
+            compute.setValues(new double[compute.getSize()]);
+            inputReader(); //return each input value to the values list
 
-        compute.setSize(Integer.parseInt(txtSize.getText()));
-        compute.setValues(new double[compute.getSize()]);
-        inputReader(); //return each input value to the values list
+            //MEAN
+            compute.computeMean();
+            txtMean.setText(String.format("%.2f", compute.getMean()));
+            resMean.setText(String.format("%.2f", compute.getMean()));
 
-        //MEAN
-        compute.computeMean();
-        txtMean.setText(String.format("%.2f", compute.getMean()));
-        resMean.setText(String.format("%.2f", compute.getMean()));
+            //MEDIAN
+            txtMedian.setText(String.valueOf(compute.computeMedian()));
+            resMedian.setText(String.valueOf(compute.computeMedian()));
 
-        //MEDIAN
-        txtMedian.setText(String.valueOf(compute.computeMedian()));
-        resMedian.setText(String.valueOf(compute.computeMedian()));
-
-        //MODE
-        ArrayList<Double> modeList = compute.computeMode();
-        StringBuilder modeStr = new StringBuilder();
-        for(int i=0; i < modeList.size(); i++) {
-            if(i == modeList.size() - 1) {
-                modeStr.append(modeList.get(i));
-                break;
+            //MODE
+            ArrayList<Double> modeList = compute.computeMode();
+            StringBuilder modeStr = new StringBuilder();
+            for (int i = 0; i < modeList.size(); i++) {
+                if (i == modeList.size() - 1) {
+                    modeStr.append(modeList.get(i));
+                    break;
+                }
+                modeStr.append(modeList.get(i)).append(", ");
             }
-            modeStr.append(modeList.get(i)).append(", ");
+            txtMode.setText(modeStr.toString());
+            resMode.setText(modeStr.toString());
+
+            //VARIANCE
+            txtVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
+            resVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
+
+            //STD
+            txtStdDev.setText(String.valueOf(String.format("%.2f", compute.computeStandardDev(compute.getVariance()))));
+            resStdDev.setText(String.valueOf(String.format("%.2f", compute.computeStandardDev(compute.getVariance()))));
         }
-        txtMode.setText(modeStr.toString());
-        resMode.setText(modeStr.toString());
-
-        //VARIANCE
-        txtVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
-        resVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
-
-        //STD
-        txtStdDev.setText(String.valueOf(String.format("%.2f", compute.computeStandardDev(compute.getVariance()))));
-        resStdDev.setText(String.valueOf(String.format("%.2f", compute.computeStandardDev(compute.getVariance()))));
     }
     private void inputReader() {
         String input = txtInput.getText();
@@ -175,10 +178,14 @@ public class probabilityFunction extends JFrame {
     private void onStart() {
         cl.show(cardPanel, "Card1");}
     private void onNext() {
-        cl.show(cardPanel, "Card2");
-        ProbVizualizer probChart = new ProbVizualizer(compute.getValues());
-        ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
-        resCenter.add(chartPanel);
+        if (txtMean.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please compute for results first.", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            cl.show(cardPanel, "Card2");
+            ProbVizualizer probChart = new ProbVizualizer(compute.getValues());
+            ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
+            resCenter.add(chartPanel);
+        }
     }
     private void onReturn() {
         cl.show(cardPanel, "Card1");
