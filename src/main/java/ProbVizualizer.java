@@ -1,7 +1,6 @@
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.ChartFactory;
 import org.jfree.data.statistics.HistogramDataset;
-import java.awt.*;
 
 public class ProbVizualizer {
     private double[] data;
