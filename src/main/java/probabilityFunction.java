@@ -118,26 +118,35 @@ public class probabilityFunction extends JFrame {
         //MEAN
         double mean = getMean();
         txtMean.setText(String.format("%.2f", mean));
+        resMean.setText(String.format("%.2f", mean));
 
         //MEDIAN
         double median = getMedian();
         txtMedian.setText(String.valueOf(median));
+        resMedian.setText(String.valueOf(median));
 
         //MODE
         ArrayList<Double> modeList = getMode();
         StringBuilder modeStr = new StringBuilder();
-        for(Double mode : modeList) {
-            modeStr.append(mode).append(", ");
+        for(int i=0; i < modeList.size(); i++) {
+            if(i == modeList.size() - 1) {
+                modeStr.append(modeList.get(i));
+                break;
+            }
+            modeStr.append(modeList.get(i)).append(", ");
         }
         txtMode.setText(modeStr.toString());
+        resMode.setText(modeStr.toString());
 
         //VARIANCE
         double variance = getVariance(mean);
-        txtVariance.setText(String.valueOf(variance));
+        txtVariance.setText(String.valueOf(String.format("%.2f", variance)));
+        resVariance.setText(String.valueOf(String.format("%.2f", variance)));
 
         //STD
         double standardDev = getStandardDev(variance);
-        txtStdDev.setText(String.valueOf(standardDev));
+        txtStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
+        resStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
 
     }
     private void inputReader() {
