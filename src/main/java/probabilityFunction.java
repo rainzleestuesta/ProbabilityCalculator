@@ -33,6 +33,9 @@ public class probabilityFunction extends JFrame {
     private JTextField textField4;
     private JTextField textField5;
     private JButton btnReturn;
+    private JButton btnCompute;
+    private JButton btnStart;
+    private JPanel panel0;
 
     CardLayout cl = new CardLayout();
 
@@ -40,10 +43,12 @@ public class probabilityFunction extends JFrame {
     int[] values;
     public probabilityFunction() {
         cardPanel.setLayout(cl);
+        btnStart.addActionListener(e -> onStart());
         btnGraph.addActionListener(e -> onNext());
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
 
+        cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
         cardPanel.add(panel2, "Card2");
         cl.show(cardPanel, "LAYOUT");
@@ -68,11 +73,7 @@ public class probabilityFunction extends JFrame {
         }
         txtInput.setText(Arrays.toString(values));
     }
-    private void onShowGraph(){
-
-    }
-
-
+    private void onStart() {cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
     }
