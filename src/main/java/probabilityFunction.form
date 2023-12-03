@@ -420,7 +420,7 @@
                     <properties>
                       <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
-                      <text value="Variance"/>
+                      <text value="Variance:"/>
                     </properties>
                   </component>
                   <component id="e98c7" class="javax.swing.JLabel">
@@ -430,7 +430,7 @@
                     <properties>
                       <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
-                      <text value="Standard Deviation"/>
+                      <text value="Standard Deviation:"/>
                     </properties>
                   </component>
                   <component id="68823" class="javax.swing.JTextField" binding="resMean">
