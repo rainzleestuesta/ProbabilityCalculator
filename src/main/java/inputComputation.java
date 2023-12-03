@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 
 public class inputComputation extends inputHandler {
-
     public void computeMean() {
         double sum = 0;
 
@@ -48,13 +47,16 @@ public class inputComputation extends inputHandler {
                 maxFrequency = frequency;
             }
         }
-
-        for (HashMap.Entry<Double, Integer> entry : frequencyMap.entrySet()) {
-            if (entry.getValue() == maxFrequency) {
-                modeList.add(entry.getKey());
+        if(maxFrequency == 1) {
+            return modeList;
+        }
+        else {
+            for (HashMap.Entry<Double, Integer> entry : frequencyMap.entrySet()) {
+                if (entry.getValue() == maxFrequency) {
+                    modeList.add(entry.getKey());
+                }
             }
         }
-
         return modeList;
     }
 
@@ -79,5 +81,21 @@ public class inputComputation extends inputHandler {
         stdDev = Math.sqrt(variance);
         this.setStdDev(stdDev);
         return this.getStdDev();
+    }
+
+    public String showProbability() {
+        HashMap<Double, Integer> frequencyMap = new HashMap<>();
+
+        for(double val : this.getValues()) {
+            int frequency = frequencyMap.getOrDefault(val, 0) + 1;
+            frequencyMap.put(val, frequency);
+        }
+
+        StringBuilder probString = new StringBuilder();
+        for(HashMap.Entry<Double, Integer> entry : frequencyMap.entrySet()) {
+            probString.append(String.format("%s = %s/%d\n", entry.getKey(), entry.getValue(), getSize()));
+        }
+
+        return probString.toString();
     }
 }

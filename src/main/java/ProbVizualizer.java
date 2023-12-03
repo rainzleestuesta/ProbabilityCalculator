@@ -10,7 +10,7 @@ public class ProbVizualizer {
 
     public JFreeChart visualizeProb() {
         HistogramDataset probDistribution = new HistogramDataset();
-        probDistribution.addSeries("Probability of x", this.data, 8);
+        probDistribution.addSeries("Probability of x", this.data, 20);
 
         JFreeChart probViz = ChartFactory.createHistogram(
                 "Probability Distribution",

@@ -1,11 +1,5 @@
 import org.jfree.chart.ChartPanel;
 
-import javafx.application.Application;
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -54,14 +48,19 @@ public class probabilityFunction extends JFrame {
     private JLabel lblMode;
     private JLabel lblVariance;
     private JLabel lblStdDev;
+    private JTextField txtDistance1;
+    private JButton btnGetProb;
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     inputComputation compute = new inputComputation();
+
+    ChartPanel chartPanel;
     public probabilityFunction() {
 
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
         btnGraph.addActionListener(e -> onNext());
+        btnGetProb.addActionListener(e -> computeProb());
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
         btnCompute.addActionListener(e -> onCompute());
@@ -92,6 +91,7 @@ public class probabilityFunction extends JFrame {
         resStdDev.setBorder(emptyBorder);
         txtInterpret.setEditable(false);
         txtDistance.setBorder(emptyBorder);
+        txtDistance1.setBorder(emptyBorder);
         txtSpacer.setBorder(emptyBorder);
         
         cardPanel.add(panel0, "Card0");
@@ -130,15 +130,10 @@ public class probabilityFunction extends JFrame {
     }
 
     private void onCompute(){
-        if (txtInput.getText().equals("")) {
+        if (txtInput.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please input values first.", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }else {
-            lblMean.setText("Mean:");
-            lblMedian.setText("Median:");
-            lblMode.setText("Mode:");
-            lblVariance.setText("Variance:");
-            lblStdDev.setText("Standard Deviation:");
-
+        }
+        else {
             compute.setSize(Integer.parseInt(txtSize.getText()));
             compute.setValues(new double[compute.getSize()]);
             inputReader(); //return each input value to the values list
@@ -162,8 +157,14 @@ public class probabilityFunction extends JFrame {
                 }
                 modeStr.append(modeList.get(i)).append(", ");
             }
-            txtMode.setText(modeStr.toString());
-            resMode.setText(modeStr.toString());
+
+            if (modeList.isEmpty()) {
+                txtMode.setText(" - ");
+                resMode.setText(" - ");
+            } else {
+                txtMode.setText(modeStr.toString());
+                resMode.setText(modeStr.toString());
+            }
 
             //VARIANCE
             txtVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
@@ -189,12 +190,13 @@ public class probabilityFunction extends JFrame {
         } else {
             cl.show(cardPanel, "Card2");
             ProbVizualizer probChart = new ProbVizualizer(compute.getValues());
-            ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
+            chartPanel = new ChartPanel(probChart.visualizeProb());
             resCenter.add(chartPanel);
         }
     }
     private void onReturn() {
         cl.show(cardPanel, "Card1");
+        resCenter.remove(chartPanel);
     }
     private void onInterpret() {
         ChatGPT interpret = new ChatGPT();
@@ -213,7 +215,19 @@ public class probabilityFunction extends JFrame {
         txtInterpret.setText(message);
         cl.show(cardPanel, "Card3");
     }
+    private void computeProb() {
+        if(txtMean.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please compute for results first.", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,
+                    "PROBABILITY DISTRIBUTION: \n\n" + compute.showProbability(),
+                    "Probability Calculator",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
     private void onClose() {
+        resCenter.remove(chartPanel);
         cl.show(cardPanel, "Card0");
     }
     private void onPopulation() {

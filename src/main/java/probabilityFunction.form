@@ -52,6 +52,20 @@
                   <text value="Show Graph"/>
                 </properties>
               </component>
+              <component id="e8cf8" class="javax.swing.JTextField" binding="txtDistance1">
+                <constraints/>
+                <properties>
+                  <background color="-460819"/>
+                  <columns value="2"/>
+                </properties>
+              </component>
+              <component id="3cfc1" class="javax.swing.JButton" binding="btnGetProb">
+                <constraints/>
+                <properties>
+                  <background color="-460819"/>
+                  <text value="Compute Probability"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <component id="141f9" class="javax.swing.JLabel">
@@ -206,7 +220,7 @@
                           <background color="-14342875"/>
                           <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value=""/>
+                          <text value="Mean:"/>
                         </properties>
                       </component>
                       <component id="522be" class="javax.swing.JTextField" binding="txtMean">
@@ -229,7 +243,7 @@
                           <background color="-14342875"/>
                           <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value=""/>
+                          <text value="Median:"/>
                         </properties>
                       </component>
                       <component id="9b9e" class="javax.swing.JTextField" binding="txtMedian">
@@ -252,7 +266,7 @@
                           <background color="-14342875"/>
                           <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value=""/>
+                          <text value="Mode:"/>
                         </properties>
                       </component>
                       <component id="262ea" class="javax.swing.JTextField" binding="txtMode">
@@ -275,7 +289,7 @@
                           <background color="-14342875"/>
                           <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value=""/>
+                          <text value="Variance:"/>
                         </properties>
                       </component>
                       <component id="b3c1b" class="javax.swing.JLabel" binding="lblStdDev">
@@ -286,7 +300,7 @@
                           <background color="-14342875"/>
                           <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value=""/>
+                          <text value="Standard Deviation:"/>
                         </properties>
                       </component>
                       <component id="e62d" class="javax.swing.JTextField" binding="txtVariance">
@@ -510,6 +524,7 @@
                   <component id="deb37" class="javax.swing.JButton" binding="btnReturn">
                     <constraints/>
                     <properties>
+                      <background color="-460819"/>
                       <text value="Return"/>
                     </properties>
                   </component>
@@ -523,6 +538,7 @@
                   <component id="7cf68" class="javax.swing.JButton" binding="btnInterpret">
                     <constraints/>
                     <properties>
+                      <background color="-460819"/>
                       <text value="Interpret Results"/>
                     </properties>
                   </component>
