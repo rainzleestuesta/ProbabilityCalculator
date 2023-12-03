@@ -45,13 +45,8 @@ public class probabilityFunction extends JFrame {
     private JButton btnInterpret;
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-    int size;
-    double[] values;
-    String inputText, samplingMethod;
     inputComputation compute = new inputComputation();
     public probabilityFunction() {
-
-
 
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
@@ -109,8 +104,8 @@ public class probabilityFunction extends JFrame {
     private void onRandomize() {
         int start = 1, end = 500;
         Random random = new Random();
-        size = Integer.parseInt(txtSize.getText());
-        double[] values = new double[size];
+        compute.setSize(Integer.parseInt(txtSize.getText()));
+        double[] values = new double[compute.getSize()];
 
         StringBuilder inputTextBuilder = new StringBuilder();
 

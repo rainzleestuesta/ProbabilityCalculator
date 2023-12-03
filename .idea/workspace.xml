@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="borderless textfields added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" afterDir="false" />
-    </list>
+    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="added a separate page for interpretation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701611388527</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added a separate page for interpretation">
+      <option name="closed" value="true" />
+      <created>1701613635414</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701613635414</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +171,7 @@
     <MESSAGE value="haha" />
     <MESSAGE value="added encapsulation and inheritance" />
     <MESSAGE value="borderless textfields added" />
-    <option name="LAST_COMMIT_MESSAGE" value="borderless textfields added" />
+    <MESSAGE value="added a separate page for interpretation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a separate page for interpretation" />
   </component>
 </project>
