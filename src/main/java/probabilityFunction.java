@@ -1,6 +1,7 @@
 import org.jfree.chart.ChartPanel;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Random;
@@ -41,6 +42,7 @@ public class probabilityFunction extends JFrame {
     private JTextField txtDistance;
 
     CardLayout cl = new CardLayout();
+    Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     int size;
     double[] values;
     String inputText;
@@ -48,6 +50,7 @@ public class probabilityFunction extends JFrame {
     public probabilityFunction() {
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
+
         btnGraph.addActionListener(e -> onNext());
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
@@ -56,16 +59,22 @@ public class probabilityFunction extends JFrame {
         chkSample.addActionListener(e -> onSample());
 
         txtMean.setEditable(false);
+        txtMean.setBorder(emptyBorder);
         txtMedian.setEditable(false);
+        txtMedian.setBorder(emptyBorder);
         txtMode.setEditable(false);
+        txtMode.setBorder(emptyBorder);
         txtVariance.setEditable(false);
+        txtVariance.setBorder(emptyBorder);
         txtStdDev.setEditable(false);
+        txtStdDev.setBorder(emptyBorder);
         resMean.setEditable(false);
         resMedian.setEditable(false);
         resMode.setEditable(false);
         resVariance.setEditable(false);
         resStdDev.setEditable(false);
         txtInterpret.setEditable(false);
+        txtDistance.setBorder(emptyBorder);
         
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
