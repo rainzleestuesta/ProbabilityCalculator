@@ -31,6 +31,7 @@
                 <properties>
                   <background color="-460819"/>
                   <focusPainted value="true"/>
+                  <font name="Arial" size="14"/>
                   <text value="Randomize Numbers"/>
                 </properties>
               </component>
@@ -47,6 +48,7 @@
                 <constraints/>
                 <properties>
                   <background color="-460819"/>
+                  <font name="Arial" size="14"/>
                   <text value="Show Graph"/>
                 </properties>
               </component>
@@ -94,6 +96,7 @@
                       <forms top="0" left="3" bottom="0" right="0" defaultalign-horz="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Size"/>
                     </properties>
@@ -108,6 +111,7 @@
                     <properties>
                       <background color="-1"/>
                       <columns value="5"/>
+                      <font name="Arial" size="14"/>
                     </properties>
                   </component>
                   <component id="c5c2" class="javax.swing.JCheckBox" binding="chkPopu">
@@ -117,6 +121,7 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Population"/>
                     </properties>
@@ -128,6 +133,7 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Sample"/>
                     </properties>
@@ -138,6 +144,7 @@
                       <forms defaultalign-horz="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="  Input Values"/>
                     </properties>
@@ -152,6 +159,7 @@
                     <properties>
                       <background color="-1"/>
                       <columns value="51"/>
+                      <font name="Arial" size="14"/>
                     </properties>
                   </component>
                   <vspacer id="7fdd7">
@@ -190,14 +198,15 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="858bc" class="javax.swing.JLabel">
+                      <component id="858bc" class="javax.swing.JLabel" binding="lblMean">
                         <constraints>
                           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <background color="-14342875"/>
+                          <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value="Mean:"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="522be" class="javax.swing.JTextField" binding="txtMean">
@@ -207,17 +216,20 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-1"/>
+                          <background color="-460819"/>
+                          <font name="Arial" size="14"/>
+                          <foreground color="-14342875"/>
                         </properties>
                       </component>
-                      <component id="c942f" class="javax.swing.JLabel">
+                      <component id="c942f" class="javax.swing.JLabel" binding="lblMedian">
                         <constraints>
                           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <background color="-14342875"/>
+                          <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value="Median:"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="9b9e" class="javax.swing.JTextField" binding="txtMedian">
@@ -227,17 +239,20 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-1"/>
+                          <background color="-460819"/>
+                          <font name="Arial" size="14"/>
+                          <foreground color="-14342875"/>
                         </properties>
                       </component>
-                      <component id="81ce8" class="javax.swing.JLabel">
+                      <component id="81ce8" class="javax.swing.JLabel" binding="lblMode">
                         <constraints>
                           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <background color="-14342875"/>
+                          <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value="Mode:"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="262ea" class="javax.swing.JTextField" binding="txtMode">
@@ -247,27 +262,31 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-1"/>
+                          <background color="-460819"/>
+                          <font name="Arial" size="14"/>
+                          <foreground color="-14342875"/>
                         </properties>
                       </component>
-                      <component id="b2bd3" class="javax.swing.JLabel">
+                      <component id="b2bd3" class="javax.swing.JLabel" binding="lblVariance">
                         <constraints>
                           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <background color="-14342875"/>
+                          <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value="Variance:"/>
+                          <text value=""/>
                         </properties>
                       </component>
-                      <component id="b3c1b" class="javax.swing.JLabel">
+                      <component id="b3c1b" class="javax.swing.JLabel" binding="lblStdDev">
                         <constraints>
                           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <background color="-14342875"/>
+                          <font name="Arial" size="14"/>
                           <foreground color="-14342875"/>
-                          <text value="Standard Deviation:"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="e62d" class="javax.swing.JTextField" binding="txtVariance">
@@ -277,7 +296,9 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-1"/>
+                          <background color="-460819"/>
+                          <font name="Arial" size="14"/>
+                          <foreground color="-14342875"/>
                         </properties>
                       </component>
                       <component id="f4ea4" class="javax.swing.JTextField" binding="txtStdDev">
@@ -287,7 +308,9 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-1"/>
+                          <background color="-460819"/>
+                          <font name="Arial" size="14"/>
+                          <foreground color="-14342875"/>
                         </properties>
                       </component>
                       <component id="34331" class="javax.swing.JLabel">
@@ -295,13 +318,14 @@
                           <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Arial Black" size="18"/>
                           <foreground color="-14342875"/>
                           <text value="  RESULTS"/>
                         </properties>
                       </component>
                       <component id="1f0af" class="javax.swing.JButton" binding="btnCompute">
                         <constraints>
-                          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <background color="-1392"/>
@@ -347,7 +371,7 @@
           <grid id="12ac2" binding="resCenter" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints border-constraint="Center"/>
             <properties>
-              <background color="-1"/>
+              <background color="-460819"/>
             </properties>
             <border type="none"/>
             <children>
@@ -364,6 +388,7 @@
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Mean:"/>
                     </properties>
@@ -373,6 +398,7 @@
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Median:"/>
                     </properties>
@@ -382,6 +408,7 @@
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Mode:"/>
                     </properties>
@@ -391,6 +418,7 @@
                       <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Variance"/>
                     </properties>
@@ -400,6 +428,7 @@
                       <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <font name="Arial" size="14"/>
                       <foreground color="-14342875"/>
                       <text value="Standard Deviation"/>
                     </properties>
@@ -412,6 +441,8 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
+                      <foreground color="-14342875"/>
                     </properties>
                   </component>
                   <component id="3c26" class="javax.swing.JTextField" binding="resMedian">
@@ -422,6 +453,8 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
+                      <foreground color="-14342875"/>
                     </properties>
                   </component>
                   <component id="c6717" class="javax.swing.JTextField" binding="resMode">
@@ -432,6 +465,8 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
+                      <foreground color="-14342875"/>
                     </properties>
                   </component>
                   <component id="2c018" class="javax.swing.JTextField" binding="resVariance">
@@ -442,6 +477,8 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
+                      <foreground color="-14342875"/>
                     </properties>
                   </component>
                   <component id="763a6" class="javax.swing.JTextField" binding="resStdDev">
@@ -452,6 +489,8 @@
                     </constraints>
                     <properties>
                       <background color="-460819"/>
+                      <font name="Arial" size="14"/>
+                      <foreground color="-14342875"/>
                     </properties>
                   </component>
                   <hspacer id="ab9c6">
@@ -561,7 +600,7 @@
                 <constraints/>
                 <properties>
                   <background color="-460819"/>
-                  <font name="Arial" size="12"/>
+                  <font name="Arial" size="18"/>
                   <foreground color="-14342875"/>
                 </properties>
               </component>

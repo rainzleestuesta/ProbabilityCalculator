@@ -43,6 +43,11 @@ public class probabilityFunction extends JFrame {
     private JPanel pnlSouth;
     private JTextField txtSpacer;
     private JButton btnInterpret;
+    private JLabel lblMean;
+    private JLabel lblMedian;
+    private JLabel lblMode;
+    private JLabel lblVariance;
+    private JLabel lblStdDev;
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     inputComputation compute = new inputComputation();
@@ -119,6 +124,13 @@ public class probabilityFunction extends JFrame {
     }
 
     private void onCompute(){
+
+        lblMean.setText("Mean:");
+        lblMedian.setText("Median:");
+        lblMode.setText("Mode:");
+        lblVariance.setText("Variance:");
+        lblStdDev.setText("Standard Deviation:");
+
         compute.setSize(Integer.parseInt(txtSize.getText()));
         compute.setValues(new double[compute.getSize()]);
         inputReader(); //return each input value to the values list
