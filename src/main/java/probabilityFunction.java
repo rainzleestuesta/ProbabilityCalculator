@@ -2,7 +2,6 @@ import org.jfree.chart.ChartPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
 import java.util.Random;
 
 
@@ -41,7 +40,6 @@ public class probabilityFunction extends JFrame {
     private JTextField txtDistance;
 
     CardLayout cl = new CardLayout();
-
     int size;
     double [] values = new double[size];
     String inputText;
@@ -81,30 +79,63 @@ public class probabilityFunction extends JFrame {
         this.setVisible(true);
     }
 
-    private void onRandomize(){
+    private void onRandomize() {
         Random random = new Random();
+
+        // Initialize the values array here
+        double[] values = new double[size];
 
         StringBuilder inputTextBuilder = new StringBuilder();
 
         for (int i = 0; i < size; i++) {
-           double randomNum = random.nextDouble();
+            double randomNum = random.nextDouble();
             values[i] = randomNum;
             inputTextBuilder.append(" ").append(randomNum);
         }
         inputText = inputTextBuilder.toString();
         txtInput.setText(inputText);
-
     }
+
     private void onCompute(){
+        size = Integer.parseInt(txtSize.getText());
+        inputReader();
         double mean, median, mode, variance, std, sum = 0;
 
+        //MEAN
         for(int i = 0; i < size; i++){
             sum = sum + values[i];
         }
         mean = sum / size;
+        txtMean.setText(String.format("%.2f", mean));
+
+        //MEDIAN
+        if(size % 2 != 0){
+            median =  values[size / 2];
+        }
+        else{
+            int index1, index2;
+            index1 = size / 2;
+            index2 = (size/2)+1;
+            median = (values[index1] + values[index2]) / 2.0;
+        }
+        txtMedian.setText(String.valueOf(median));
+        //MODE
+
+        //VARIANCE
+
+        //STD
 
     }
-    private void onStart() {cl.show(cardPanel, "Card1");}
+    private void inputReader() {
+        String input = txtInput.getText();
+        String[] parts = input.split(", ");
+        for (int i = 0; i < size; i++) {
+                values[i] = Double.parseDouble(parts[i]);
+        }
+    }
+
+    private void onStart() {
+        cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
         ProbVizualizer probChart = new ProbVizualizer(values);
@@ -118,4 +149,5 @@ public class probabilityFunction extends JFrame {
     public static void main(String[] args) {
         new probabilityFunction();
     }
+
 }
