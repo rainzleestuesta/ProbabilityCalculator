@@ -1,3 +1,5 @@
+import org.jfree.chart.ChartPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
@@ -39,8 +41,8 @@ public class probabilityFunction extends JFrame {
 
     CardLayout cl = new CardLayout();
 
-    int size;
-    int[] values;
+    private int size;
+    private double[] values;
     public probabilityFunction() {
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
@@ -77,7 +79,13 @@ public class probabilityFunction extends JFrame {
     private void onNext() {
         cl.show(cardPanel, "Card2");
     }
-    private void onReturn() {cl.show(cardPanel, "Card1");}
+    private void onReturn() {
+        cl.show(cardPanel, "Card1");
+
+        ProbVizualizer probChart = new ProbVizualizer(values);
+        ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
+        resCenter.add(chartPanel);
+    }
 
     public static void main(String[] args) {
         new probabilityFunction();

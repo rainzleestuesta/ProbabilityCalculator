@@ -310,7 +310,7 @@
                 </constraints>
                 <properties>
                   <foreground color="-14342875"/>
-                  <text value="INTERPRETAION"/>
+                  <text value="INTERPRETATION"/>
                 </properties>
               </component>
               <component id="54161" class="javax.swing.JTextArea" binding="txtInterpret">
