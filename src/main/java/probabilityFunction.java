@@ -117,7 +117,7 @@ public class probabilityFunction extends JFrame {
         for (int i = 0; i < compute.getSize(); i++) {
             double randomNum = start + (random.nextDouble() * (end - start));
             values[i] = Double.parseDouble(String.format("%.2f", randomNum));
-            inputTextBuilder.append(" ").append(values[i]);
+            inputTextBuilder.append(values[i]).append(" ");
         }
         compute.setInputText(inputTextBuilder.toString());
         txtInput.setText(compute.getInputText());
@@ -184,6 +184,20 @@ public class probabilityFunction extends JFrame {
         cl.show(cardPanel, "Card1");
     }
     private void onInterpret() {
+        ChatGPT interpret = new ChatGPT();
+        String interpretation = interpret.chatGPT("Give me a brief descriptive analysis of the probability distribution of themean, median, mode, variance, and standard deviation of the given numbers:"
+                + txtInput.getText()+ "Summarize the analysis in less than 100 words");
+        int c = 0;
+        String message = "";
+        for (char i : interpretation.toCharArray()) {
+            c++;
+            message = message + i;
+
+            if (c > 0 && c % 80 == 0) {
+                message = message + "\n";
+            }
+        }
+        txtInterpret.setText(message);
         cl.show(cardPanel, "Card3");
     }
     private void onClose() {
