@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="linis linis">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChatGPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChatGPT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/probabilityFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/probabilityFunction.class" afterDir="false" />
-    </list>
+    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="input checker" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +143,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701613992977</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="pop-up na yung results">
+      <option name="closed" value="true" />
+      <created>1701614635111</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701614635111</updated>
+    </task>
+    <task id="LOCAL-00011" summary="input checker">
+      <option name="closed" value="true" />
+      <created>1701615268097</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701615268097</updated>
+    </task>
+    <task id="LOCAL-00012" summary="input checker">
+      <option name="closed" value="true" />
+      <created>1701615974954</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701615974954</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +205,8 @@
     <MESSAGE value="borderless textfields added" />
     <MESSAGE value="added a separate page for interpretation" />
     <MESSAGE value="linis linis" />
-    <option name="LAST_COMMIT_MESSAGE" value="linis linis" />
+    <MESSAGE value="pop-up na yung results" />
+    <MESSAGE value="input checker" />
+    <option name="LAST_COMMIT_MESSAGE" value="input checker" />
   </component>
 </project>

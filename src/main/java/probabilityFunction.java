@@ -143,8 +143,8 @@ public class probabilityFunction extends JFrame {
             resMean.setText(String.format("%.2f", compute.getMean()));
 
             //MEDIAN
-            txtMedian.setText(String.valueOf(compute.computeMedian()));
-            resMedian.setText(String.valueOf(compute.computeMedian()));
+            txtMedian.setText(String.format("%.2f", compute.computeMedian()));
+            resMedian.setText(String.format("%.2f", compute.computeMedian()));
 
             //MODE
             ArrayList<Double> modeList = compute.computeMode();
