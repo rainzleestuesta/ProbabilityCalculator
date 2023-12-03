@@ -42,14 +42,17 @@ public class probabilityFunction extends JFrame {
 
     CardLayout cl = new CardLayout();
 
-    private int size;
-    private double[] values;
+    int size;
+    double [] values = new double[size];
+    String inputText;
+
     public probabilityFunction() {
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
         btnGraph.addActionListener(e -> onNext());
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
+        btnCompute.addActionListener(e -> onCompute());
 
         txtMean.setEditable(false);
         txtMedian.setEditable(false);
@@ -81,16 +84,30 @@ public class probabilityFunction extends JFrame {
     private void onRandomize(){
         Random random = new Random();
 
-        for(int i =0; i < size; i++){
-            int randomNum = random.nextInt();
+        StringBuilder inputTextBuilder = new StringBuilder();
+
+        for (int i = 0; i < size; i++) {
+           double randomNum = random.nextDouble();
             values[i] = randomNum;
+            inputTextBuilder.append(" ").append(randomNum);
         }
-        txtInput.setText(Arrays.toString(values));
+        inputText = inputTextBuilder.toString();
+        txtInput.setText(inputText);
+
+    }
+    private void onCompute(){
+        double mean, median, mode, variance, std, sum = 0;
+
+        for(int i = 0; i < size; i++){
+            sum = sum + values[i];
+        }
+        mean = sum / size;
+
     }
     private void onStart() {cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
-        ProbVizualizer probChart = new ProbVizualizer(new double[] {1,2,2,3,3,3,4,4,5});
+        ProbVizualizer probChart = new ProbVizualizer(values);
         ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
         resCenter.add(chartPanel);
     }
