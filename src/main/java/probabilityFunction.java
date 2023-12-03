@@ -47,17 +47,18 @@ public class probabilityFunction extends JFrame {
     private JButton btnStart;
     private JPanel panel0;
     private JTextField txtDistance;
-
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     int size;
     double[] values;
-    String inputText, samplingMethod, prompt, interpretation;
-
+    String inputText, samplingMethod;
+    inputComputation compute = new inputComputation();
     public probabilityFunction() {
+
+
+
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
-
         btnGraph.addActionListener(e -> onNext());
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
@@ -94,6 +95,7 @@ public class probabilityFunction extends JFrame {
         cl.show(cardPanel, "LAYOUT");
 
         //WINDOW SETTINGS
+        //this.setUndecorated(true);
         this.add(cardPanel);
         this.setContentPane(cardPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -112,32 +114,31 @@ public class probabilityFunction extends JFrame {
 
         StringBuilder inputTextBuilder = new StringBuilder();
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < compute.getSize(); i++) {
             double randomNum = start + (random.nextDouble() * (end - start));
             values[i] = Double.parseDouble(String.format("%.2f", randomNum));
             inputTextBuilder.append(" ").append(values[i]);
         }
-        inputText = inputTextBuilder.toString();
-        txtInput.setText(inputText);
+        compute.setInputText(inputTextBuilder.toString());
+        txtInput.setText(compute.getInputText());
     }
 
     private void onCompute(){
-        size = Integer.parseInt(txtSize.getText());
-        values = new double[size];
+        compute.setSize(Integer.parseInt(txtSize.getText()));
+        compute.setValues(new double[compute.getSize()]);
         inputReader(); //return each input value to the values list
 
         //MEAN
-        double mean = getMean();
-        txtMean.setText(String.format("%.2f", mean));
-        resMean.setText(String.format("%.2f", mean));
+        compute.computeMean();
+        txtMean.setText(String.format("%.2f", compute.getMean()));
+        resMean.setText(String.format("%.2f", compute.getMean()));
 
         //MEDIAN
-        double median = getMedian();
-        txtMedian.setText(String.valueOf(median));
-        resMedian.setText(String.valueOf(median));
+        txtMedian.setText(String.valueOf(compute.computeMedian()));
+        resMedian.setText(String.valueOf(compute.computeMedian()));
 
         //MODE
-        ArrayList<Double> modeList = getMode();
+        ArrayList<Double> modeList = compute.computeMode();
         StringBuilder modeStr = new StringBuilder();
         for(int i=0; i < modeList.size(); i++) {
             if(i == modeList.size() - 1) {
@@ -150,110 +151,25 @@ public class probabilityFunction extends JFrame {
         resMode.setText(modeStr.toString());
 
         //VARIANCE
-        double variance = getVariance(mean);
-        txtVariance.setText(String.valueOf(String.format("%.2f", variance)));
-        resVariance.setText(String.valueOf(String.format("%.2f", variance)));
+        txtVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
+        resVariance.setText(String.valueOf(String.format("%.2f", compute.computeVariance(compute.getMean()))));
 
         //STD
-        double standardDev = getStandardDev(variance);
-        txtStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
-        resStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
-
-        ChatGPT interpret = new ChatGPT();
-        interpretation = interpret.chatGPT("Give me a descriptive analysis of the probability distribution of the mean," +
-                "median, mode, variance, and standard deviation of the given numbers:"+ txtInput.getText()+ "Summarize the analysis in 100 words");
-        txtInterpret.setText(interpretation);
+        txtStdDev.setText(String.valueOf(String.format("%.2f", compute.computeStandardDev(compute.getVariance()))));
+        resStdDev.setText(String.valueOf(String.format("%.2f", compute.computeStandardDev(compute.getVariance()))));
     }
     private void inputReader() {
         String input = txtInput.getText();
         String[] parts = input.split(" ");
-        for (int i = 0; i < size; i++) {
-            values[i] = Double.parseDouble(parts[i]);
+        for (int i = 0; i < compute.getSize(); i++) {
+            compute.getValues()[i] = Double.parseDouble(parts[i]);
         }
     }
-
-    private double getMean() {
-        double sum = 0;
-
-        for(int i = 0; i < size; i++){
-            sum = sum + values[i];
-        }
-        double mean = sum / size;
-        return mean;
-    }
-
-    private double getMedian() {
-        //Duplicate values list in getting the median
-        double[] sortedValues = new double[size];
-        System.arraycopy(values, 0, sortedValues, 0, size);
-
-        //Sort the duplicate list copy
-        Arrays.sort(sortedValues);
-
-        //Get the middle value of the new sorted list
-        double median;
-        if(size % 2 != 0){
-            median =  values[size / 2];
-        }
-        else{
-            int index1, index2;
-            index1 = size / 2;
-            index2 = (size/2)+1;
-            median = (values[index1] + values[index2]) / 2.0;
-        }
-        return median;
-    }
-
-    private ArrayList<Double> getMode() {
-        //NOTE: An array of values can have multiple modes. Therefore, we will return a double array that contains the mode/s
-
-        HashMap<Double, Integer> frequencyMap = new HashMap<>();
-        ArrayList<Double> modeList = new ArrayList<>();
-        int maxFrequency = 0;
-
-        for(double val : values) {
-            int frequency = frequencyMap.getOrDefault(val, 0) + 1;
-            frequencyMap.put(val, frequency);
-
-            if(frequency > maxFrequency) {
-                maxFrequency = frequency;
-            }
-        }
-
-        for (HashMap.Entry<Double, Integer> entry : frequencyMap.entrySet()) {
-            if (entry.getValue() == maxFrequency) {
-                modeList.add(entry.getKey());
-            }
-        }
-
-        return modeList;
-    }
-
-    private double getVariance(double mean) {
-        //return all instances of (x - mean)^2 into an array
-        double variance = 0, sum = 0;
-        for(int i=0; i<size; i++) {
-            sum += Math.pow(values[i] - mean, 2);
-        }
-
-        //Depending on the sampling method, solve for the value of the variance
-        variance = switch (samplingMethod) {
-            case "Population" -> sum / size;
-            case "Sample" -> sum / (size - 1);
-            default -> variance;
-        };
-        return variance;
-    }
-
-    private double getStandardDev(double variance) {
-        return Math.sqrt(variance);
-    }
-
     private void onStart() {
         cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
-        ProbVizualizer probChart = new ProbVizualizer(values);
+        ProbVizualizer probChart = new ProbVizualizer(compute.getValues());
         ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
         resCenter.add(chartPanel);
     }
@@ -261,10 +177,10 @@ public class probabilityFunction extends JFrame {
         cl.show(cardPanel, "Card1");
     }
     private void onPopulation() {
-        samplingMethod = "Population";
+        compute.setSamplingMethod("Population");
     }
     private void onSample() {
-        samplingMethod = "Sample";
+        compute.setSamplingMethod("Sample");
     }
     public static void main(String[] args) {
         new probabilityFunction();
