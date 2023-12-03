@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
+import java.util.Random;
+
 
 public class probabilityFunction extends JFrame {
     private JPanel cardPanel;
@@ -32,10 +35,14 @@ public class probabilityFunction extends JFrame {
     private JButton btnReturn;
 
     CardLayout cl = new CardLayout();
+
+    int size;
+    int[] values;
     public probabilityFunction() {
         cardPanel.setLayout(cl);
         btnGraph.addActionListener(e -> onNext());
         btnReturn.addActionListener(e -> onReturn());
+        btnRandomize.addActionListener(e -> onRandomize());
 
         cardPanel.add(panel1, "Card1");
         cardPanel.add(panel2, "Card2");
@@ -52,15 +59,19 @@ public class probabilityFunction extends JFrame {
         this.setVisible(true);
     }
 
-    private void onOK() {
-        // add your code here
-        dispose();
+    private void onRandomize(){
+        Random random = new Random();
+
+        for(int i =0; i < size; i++){
+            int randomNum = random.nextInt();
+            values[i] = randomNum;
+        }
+        txtInput.setText(Arrays.toString(values));
+    }
+    private void onShowGraph(){
+
     }
 
-    private void onCancel() {
-        // add your code here if necessary
-        dispose();
-    }
 
     private void onNext() {
         cl.show(cardPanel, "Card2");
