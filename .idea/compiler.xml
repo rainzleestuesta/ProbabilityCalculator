@@ -11,4 +11,9 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ProbabilityCalculator" options="--module-path $PROJECT_DIR$/../../../javafx-sdk-21.0.1/lib --add-modules &quot;javafx.controls,javafx.fxml,javafx.base, javafx.graphics, javafx.media, javafx.swing&quot;" />
+    </option>
+  </component>
 </project>

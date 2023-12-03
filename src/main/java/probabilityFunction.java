@@ -1,5 +1,11 @@
 import org.jfree.chart.ChartPanel;
 
+import javafx.application.Application;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
