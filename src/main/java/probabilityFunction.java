@@ -245,8 +245,8 @@ public class probabilityFunction extends JFrame {
         cl.show(cardPanel, "Card2");
 
         ChatGPT interpret = new ChatGPT();
-        interpretation = interpret.chatGPT("Give me a descriptive analysis of the probability distribution of the mean," +
-                "median, mode, variance, and standard deviation of the given numbers:"+ txtInput.getText()+ "Summarize the analysis in 100 words");
+        interpretation = interpret.chatGPT("Give me a brief descriptive analysis of the probability distribution of themean, median, mode, variance, and standard deviation of the given numbers:"
+                + txtInput.getText()+ "Summarize the analysis in less than 100 words");
         int c = 0;
         String message = "";
         for (char i : interpretation.toCharArray()) {
