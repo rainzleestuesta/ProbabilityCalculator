@@ -193,7 +193,7 @@ public class probabilityFunction extends JFrame {
             c++;
             message = message + i;
 
-            if (c > 0 && c % 80 == 0) {
+            if (c > 0 && c % 85 == 0) {
                 message = message + "\n";
             }
         }
