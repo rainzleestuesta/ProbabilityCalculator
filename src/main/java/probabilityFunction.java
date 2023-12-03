@@ -142,7 +142,7 @@ public class probabilityFunction extends JFrame {
     }
     private void inputReader() {
         String input = txtInput.getText();
-        String[] parts = input.split(", ");
+        String[] parts = input.split(" ");
         for (int i = 0; i < size; i++) {
             values[i] = Double.parseDouble(parts[i]);
         }
