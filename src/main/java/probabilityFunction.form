@@ -30,6 +30,7 @@
                 <constraints/>
                 <properties>
                   <background color="-460819"/>
+                  <focusPainted value="true"/>
                   <text value="Randomize Numbers"/>
                 </properties>
               </component>
@@ -105,24 +106,24 @@
                       <columns value="15"/>
                     </properties>
                   </component>
-                  <component id="c5c2" class="javax.swing.JCheckBox" binding="populationCheckBox" default-binding="true">
+                  <component id="c5c2" class="javax.swing.JCheckBox" binding="chkPopu">
                     <constraints>
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                       <forms/>
                     </constraints>
                     <properties>
-                      <background color="-1"/>
+                      <background color="-460819"/>
                       <foreground color="-14342875"/>
                       <text value="Population"/>
                     </properties>
                   </component>
-                  <component id="89b31" class="javax.swing.JCheckBox" binding="sampleCheckBox" default-binding="true">
+                  <component id="89b31" class="javax.swing.JCheckBox" binding="chkSample">
                     <constraints>
                       <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                       <forms defaultalign-horz="false"/>
                     </constraints>
                     <properties>
-                      <background color="-1"/>
+                      <background color="-460819"/>
                       <foreground color="-14342875"/>
                       <text value="Sample"/>
                     </properties>
@@ -519,6 +520,10 @@
     <group name="btnGroup">
       <member id="bac69"/>
       <member id="1be18"/>
+    </group>
+    <group name="btnGroup1">
+      <member id="c5c2"/>
+      <member id="89b31"/>
     </group>
   </buttonGroups>
 </form>
