@@ -46,7 +46,7 @@ public class probabilityFunction extends JFrame {
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     int size;
     double[] values;
-    String inputText, samplingMethod;
+    String inputText, samplingMethod, prompt, interpretation;
 
     public probabilityFunction() {
         cardPanel.setLayout(cl);
@@ -153,6 +153,10 @@ public class probabilityFunction extends JFrame {
         txtStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
         resStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
 
+        ChatGPT interpret = new ChatGPT();
+        interpretation = interpret.chatGPT("Give me a descriptive analysis of the probability distribution of the mean," +
+                "median, mode, variance, and standard deviation of the given numbers:"+ txtInput.getText()+ "Summarize the analysis in 100 words");
+        txtInterpret.setText(interpretation);
     }
     private void inputReader() {
         String input = txtInput.getText();
