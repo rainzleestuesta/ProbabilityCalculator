@@ -153,10 +153,6 @@ public class probabilityFunction extends JFrame {
         txtStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
         resStdDev.setText(String.valueOf(String.format("%.2f", standardDev)));
 
-        ChatGPT interpret = new ChatGPT();
-        interpretation = interpret.chatGPT("Give me a descriptive analysis of the probability distribution of the mean," +
-                "median, mode, variance, and standard deviation of the given numbers:"+ txtInput.getText()+ "Summarize the analysis in 100 words");
-        txtInterpret.setText(interpretation);
     }
     private void inputReader() {
         String input = txtInput.getText();
@@ -247,6 +243,22 @@ public class probabilityFunction extends JFrame {
         cl.show(cardPanel, "Card1");}
     private void onNext() {
         cl.show(cardPanel, "Card2");
+
+        ChatGPT interpret = new ChatGPT();
+        interpretation = interpret.chatGPT("Give me a descriptive analysis of the probability distribution of the mean," +
+                "median, mode, variance, and standard deviation of the given numbers:"+ txtInput.getText()+ "Summarize the analysis in 100 words");
+        int c = 0;
+        String message = "";
+        for (char i : interpretation.toCharArray()) {
+            c++;
+            message = message + i;
+
+            if (c > 0 && c % 20 == 0) {
+                message = message + "\n";
+            }
+        }
+        txtInterpret.setText(message);
+
         ProbVizualizer probChart = new ProbVizualizer(values);
         ChartPanel chartPanel = new ChartPanel(probChart.visualizeProb());
         resCenter.add(chartPanel);

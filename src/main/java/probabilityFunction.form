@@ -377,6 +377,7 @@
                     <constraints/>
                     <properties>
                       <background color="-11513259"/>
+                      <foreground color="-1"/>
                     </properties>
                   </component>
                 </children>
