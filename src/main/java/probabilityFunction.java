@@ -101,6 +101,8 @@ public class probabilityFunction extends JFrame {
 
     private void onCompute(){
         size = Integer.parseInt(txtSize.getText());
+        double[] values = new double[size];
+        values = inputReader();
         double mean, median, mode, variance, std, sum = 0;
 
         //MEAN
@@ -128,12 +130,16 @@ public class probabilityFunction extends JFrame {
         //STD
 
     }
-    private void inputReader() {
+    private double[] inputReader() {
         String input = txtInput.getText();
         String[] parts = input.split(", ");
-        for (int i = 0; i < size; i++) {
-                values[i] = Double.parseDouble(parts[i]);
+        double[] values = new double[parts.length];
+
+        for (int i = 0; i < parts.length; i++) {
+            values[i] = Double.parseDouble(parts[i]);
         }
+
+        return values;
     }
 
     private void onStart() {
