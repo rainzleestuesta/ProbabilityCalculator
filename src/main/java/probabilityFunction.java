@@ -44,7 +44,7 @@ public class probabilityFunction extends JFrame {
 
     CardLayout cl = new CardLayout();
     Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-    Insets margins = new Insets(10, 20, 10, 20);
+
     int size;
     double [] values = new double[size];
     String inputText;
@@ -52,16 +52,10 @@ public class probabilityFunction extends JFrame {
     public probabilityFunction() {
         cardPanel.setLayout(cl);
         btnStart.addActionListener(e -> onStart());
-        btnStart.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-        btnStart.setMargin(margins);
         btnGraph.addActionListener(e -> onNext());
-        btnGraph.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         btnReturn.addActionListener(e -> onReturn());
-        btnReturn.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         btnRandomize.addActionListener(e -> onRandomize());
-        btnRandomize.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         btnCompute.addActionListener(e -> onCompute());
-        btnCompute.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         chkPopu.addActionListener(e -> onPopu());
         chkSample.addActionListener(e -> onSample());
 
@@ -81,7 +75,6 @@ public class probabilityFunction extends JFrame {
         resVariance.setEditable(false);
         resStdDev.setEditable(false);
         txtInterpret.setEditable(false);
-        txtDistance.setBorder(emptyBorder);
 
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");
