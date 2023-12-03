@@ -38,6 +38,7 @@ public class probabilityFunction extends JFrame {
     private JButton btnCompute;
     private JButton btnStart;
     private JPanel panel0;
+    private JTextField txtDistance;
 
     CardLayout cl = new CardLayout();
 
@@ -49,6 +50,12 @@ public class probabilityFunction extends JFrame {
         btnGraph.addActionListener(e -> onNext());
         btnReturn.addActionListener(e -> onReturn());
         btnRandomize.addActionListener(e -> onRandomize());
+
+        txtMean.setEditable(false);
+        txtMedian.setEditable(false);
+        txtMode.setEditable(false);
+        txtVariance.setEditable(false);
+        txtStdDev.setEditable(false);
 
         cardPanel.add(panel0, "Card0");
         cardPanel.add(panel1, "Card1");

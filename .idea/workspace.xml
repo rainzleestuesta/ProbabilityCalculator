@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="betlog">
-      <change beforePath="$PROJECT_DIR$/target/classes/CLayoutTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CLayoutTest.class" afterDir="false" />
+    <list default="true" id="389a6cb9-9362-4f69-b37b-f0f097be18da" name="Changes" comment="-added a start screen">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/probabilityFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/probabilityFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/probabilityFunction.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,35 +15,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;KubangPawis&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="07fdde09-c0d8-4ccd-ba4a-d9d810a9c1e4" />
-        <option name="url" value="https://github.com/rainzleestuesta/ProbabilityCalculator.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,19 +30,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;164&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/RJ Estuesta/IdeaProjects/Probability Calculator&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "164",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/RJ Estuesta/IdeaProjects/Probability Calculator",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Probability Calculator" />
@@ -92,15 +68,23 @@
       <option name="presentableId" value="Default" />
       <updated>1701528793019</updated>
     </task>
-    <task id="LOCAL-00001" summary="betlog">
+    <task id="LOCAL-00001" summary="-added JGoodies dependency&#10;-functional form">
       <option name="closed" value="true" />
-      <created>1701581409667</created>
+      <created>1701574056732</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1701581409667</updated>
+      <updated>1701574056732</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="-added a start screen">
+      <option name="closed" value="true" />
+      <created>1701580941335</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701580941335</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,7 +98,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -130,7 +114,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../../../" />
     </ignored-roots>
-    <MESSAGE value="betlog" />
-    <option name="LAST_COMMIT_MESSAGE" value="betlog" />
+    <MESSAGE value="-added JGoodies dependency&#10;-functional form" />
+    <MESSAGE value="-added a start screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="-added a start screen" />
   </component>
 </project>
